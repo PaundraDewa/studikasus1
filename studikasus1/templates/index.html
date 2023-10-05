@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Scores</title>
 </head>
+<style>
+    table, th, td {
+  border:1px solid black;
+}
+</style>
 <body>
-    <h1>Daftar Nilai Siswa</h1>
-        <ul>
-            {% for student in students %}
-                <li>
-                    Nama: {{ student['name'] }} - Nilai: {{ student['score'] }}
-                    {% if student['score'] > 90 %}
-                        - Congratulations
-                    {% elif student['score'] > 75 and student['score'] <= 90  %}
-                        - Very good
-                    {% else %}
-                        - Maaf, Anda belum lulus
-                    {% endif %}
-                </li>
-            {% endfor %}
-        </ul>
-</body>
+    <table style="width: 100%;">
+        <tr>
+            <th>Name</th>
+            <th>Score</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.score}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+<body>
+  
 </html>
+
